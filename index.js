@@ -102,7 +102,7 @@ const handlers = {
         let passcode = this.event.request.intent.slots.passcode.value;
         console.log("login requested");
         let testcode = 9999;
-        let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/passcode" //wrong spelling in API
+        let url = baseurl + "/passcode" //wrong spelling in API
         getContent( url ).then((response) => {
             console.log("Success!", response); // Yea, REST all the things
             response = JSON.parse(response);
@@ -151,7 +151,7 @@ const handlers = {
             let balance = ""; //You currently have 10241 Euros, 3820 Euros on your Deutsche Bank account";
             //balance += "and 6421 Euros on your DKB account. What can I do for you?";
 
-            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/finances" //wrong spelling in API financies
+            let url = baseurl + "/finances" //wrong spelling in API financies
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
@@ -196,7 +196,7 @@ const handlers = {
             //let response = "I have transferred 50 Euros to Peter. You still have 10191 Euro on your current account.";
             //response += "Do you want me to transfer some of it to the MSCI World ETF again?";
             
-            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
+            let url = baseurl + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
@@ -240,7 +240,7 @@ const handlers = {
             // for testing
             let response = ""; //Roger that. Your new account balance is 8191 Euro.";
             
-            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
+            let url = baseurl + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
