@@ -101,7 +101,7 @@ const handlers = {
     'LoginRequest': function () {
         let passcode = this.event.request.intent.slots.passcode.value;
         console.log("login requested");
-        let testcode = 3521;
+        let testcode = 9999;
         let url = baseurl + "/passcode" //wrong spelling in API
         getContent( url ).then((response) => {
             console.log("Success!", response); // Yea, REST all the things
@@ -196,7 +196,7 @@ const handlers = {
             //let response = "I have transferred 50 Euros to Peter. You still have 10191 Euro on your current account.";
             //response += "Do you want me to transfer some of it to the MSCI World ETF again?";
             
-            let url = baseurl + "/transferToSon"
+            let url = baseurl + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
@@ -240,7 +240,7 @@ const handlers = {
             // for testing
             let response = ""; //Roger that. Your new account balance is 8191 Euro.";
             
-            let url = baseurl + "/transferToDKB";
+            let url = baseurl + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
