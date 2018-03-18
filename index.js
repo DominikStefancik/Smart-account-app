@@ -106,7 +106,7 @@ const handlers = {
         getContent( url ).then((response) => {
             console.log("Success!", response); // Yea, REST all the things
             response = JSON.parse(response);
-            testcode = response[0];
+            testcode = response;
             console.log(testcode);
             if(passcode == testcode){
                 this.attributes.speechOutput = "Thank you. Now, what can I help you with?";
@@ -155,7 +155,7 @@ const handlers = {
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
-                balance = response[0];
+                balance = response;
                 console.log(response);
                 this.attributes.speechOutput = balance;
                 this.attributes.repromptSpeech = this.t('TASK_REPEAT_MESSAGE');
@@ -200,7 +200,7 @@ const handlers = {
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
-                response = response[0];
+                response = response;
                 console.log(response);
                 this.attributes.speechOutput = response;
                 this.attributes.repromptSpeech = this.t('TASK_REPEAT_MESSAGE');
@@ -244,7 +244,7 @@ const handlers = {
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
-                response = response[0];
+                response = response;
                 console.log(response);
                 this.attributes.speechOutput = response;
                 this.attributes.repromptSpeech = this.t('TASK_REPEAT_MESSAGE');
