@@ -14,7 +14,7 @@ const Alexa = require('alexa-sdk');
 const recipes = require('./recipes');
 //for Java Spring or others
 //const baseurl = "localhost:3000"
-const baseurl = "http://5aadf98b7389ab0014b7b900.mockapi.io";
+const baseurl = "http://smart-account.herokuapp.com";
 
 //needed for https requests or just use http
 //var rootCas = require('ssl-root-cas').create();
@@ -102,7 +102,7 @@ const handlers = {
         let passcode = this.event.request.intent.slots.passcode.value;
         console.log("login requested");
         let testcode = 9999;
-        let url = baseurl + "/passcode" //wrong spelling in API
+        let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/passcode" //wrong spelling in API
         getContent( url ).then((response) => {
             console.log("Success!", response); // Yea, REST all the things
             response = JSON.parse(response);
@@ -151,7 +151,7 @@ const handlers = {
             let balance = ""; //You currently have 10241 Euros, 3820 Euros on your Deutsche Bank account";
             //balance += "and 6421 Euros on your DKB account. What can I do for you?";
 
-            let url = baseurl + "/finances" //wrong spelling in API financies
+            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/finances" //wrong spelling in API financies
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
@@ -196,7 +196,7 @@ const handlers = {
             //let response = "I have transferred 50 Euros to Peter. You still have 10191 Euro on your current account.";
             //response += "Do you want me to transfer some of it to the MSCI World ETF again?";
             
-            let url = baseurl + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
+            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
@@ -232,15 +232,15 @@ const handlers = {
         }
         else {
             //delegate to Alexa to collect all the required slot values
-            var filledSlots = delegateSlotCollection.call(this);
+            var filledSlots2 = delegateSlotCollection.call(this);
         
             let amount = this.event.request.intent.slots.amount.value;
-            let company = this.event.request.intent.slots.company.value;
+            let company = "MSCI World ETF"; //this is set according to the previous question. //this.event.request.intent.slots.company.value;
             let fund = this.event.request.intent.slots.fund.value;
             // for testing
             let response = ""; //Roger that. Your new account balance is 8191 Euro.";
             
-            let url = baseurl + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
+            let url = "http://5aadf98b7389ab0014b7b900.mockapi.io" + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
                 response = JSON.parse(response);
