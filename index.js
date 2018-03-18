@@ -235,8 +235,8 @@ const handlers = {
             var filledSlots2 = delegateSlotCollection.call(this);
         
             let amount = this.event.request.intent.slots.amount.value;
-            let company = "MSCI World ETF"; //this is set according to the previous question. //this.event.request.intent.slots.company.value;
-            let fund = this.event.request.intent.slots.fund.value;
+            let company = this.event.request.intent.slots.company.value; //this is set according to the previous question. //this.event.request.intent.slots.company.value;
+            let fund = "MSCI World ETF"; //this.event.request.intent.slots.fund.value;
             // for testing
             let response = ""; //Roger that. Your new account balance is 8191 Euro.";
             
