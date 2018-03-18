@@ -105,7 +105,7 @@ const handlers = {
         let url = baseurl + "/passcode" //wrong spelling in API
         getContent( url ).then((response) => {
             console.log("Success!", response); // Yea, REST all the things
-            response = JSON.parse(response);
+            //response = JSON.parse(response);
             testcode = response;
             console.log(testcode);
             if(passcode == testcode){
@@ -154,7 +154,7 @@ const handlers = {
             let url = baseurl + "/finances" //wrong spelling in API financies
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
-                response = JSON.parse(response);
+                //response = JSON.parse(response);
                 balance = response;
                 console.log(response);
                 this.attributes.speechOutput = balance;
@@ -199,7 +199,7 @@ const handlers = {
             let url = baseurl + "/transferToSon" + "?amount="+amount+"&account="+account+"&name="+name;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
-                response = JSON.parse(response);
+                //response = JSON.parse(response);
                 response = response;
                 console.log(response);
                 this.attributes.speechOutput = response;
@@ -243,7 +243,7 @@ const handlers = {
             let url = baseurl + "/transferToDKB" + "?amount="+amount+"&company="+company+"&fund="+fund;
             getContent( url ).then((response) => {
                 console.log("Success!", response); // Yea, REST all the things
-                response = JSON.parse(response);
+                //response = JSON.parse(response);
                 response = response;
                 console.log(response);
                 this.attributes.speechOutput = response;
